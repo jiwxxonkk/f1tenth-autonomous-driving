@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- run MAP controller -->
+  <node pkg="map_controller" name="control_node" type="MAP_controller_real1.py" output="screen">
+      <rosparam command="load" file="$(find map_controller)/cfg/map_params_real.yaml"/>
+  </node>
+
+  <!-- run time and error tracker -->
+  <node pkg="map_controller" name="tracker_node" type="time_error_tracker.py" output="screen"/>
+
+
+</launch>

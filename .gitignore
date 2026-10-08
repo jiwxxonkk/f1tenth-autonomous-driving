@@ -1,0 +1,14 @@
+build/
+build_isolated/
+devel/
+devel_isolated/
+install/
+install_isolated/
+log/
+logs/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.bag
+.env

@@ -1,0 +1,7 @@
+image: 0316_1.png
+resolution: 0.030000
+origin: [-33.685225, -7.663234, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

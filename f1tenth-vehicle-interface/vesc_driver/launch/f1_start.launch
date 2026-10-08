@@ -1,0 +1,42 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+  <arg name="node_name" default="vesc_driver_node" />
+
+  <!-- Optionally launch in GDB, for debugging -->
+  <arg name="debug" default="false" />
+  <arg if="$(arg debug)" name="launch_prefix" value="xterm -e gdb --args" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+
+  <!-- VESC driver parameters -->
+  <arg name="port" default="/dev/ttyACM0" />
+
+  <!-- VESC driver node -->
+  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name)"
+        output="screen" launch-prefix="$(arg launch_prefix)" >
+    <param name="port" value="$(arg port)" />
+  </node>
+  
+  <!-- Optionally launch in GDB, for debugging -->
+     
+  <!-- Optionally launch in GDB, for debugging -->
+  <!-- VESC to Odom node -->
+  <node pkg="vesc_ackermann" type="vesc_to_odom_node" name="vesc_to_odom_node"
+        output="screen" launch-prefix="$(arg launch_prefix)" >
+    <param name="speed_to_erpm_gain" value="3850" />
+    <param name="speed_to_erpm_offset" value="0.0" />
+    <param name="steering_angle_to_servo_gain" value="-1.0" />
+    <param name="steering_angle_to_servo_offset" value="0.5" />
+    <param name="wheelbase" value="0.36" />
+  </node>
+    
+  <!--<node pkg="vesc_driver" type="lane_visualize.py" name="lane_visualize" output="screen" />-->
+  
+  <node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
+  
+  <node pkg="urg_node" type="urg_node" name="Ridar" output="screen" >
+  <param name="ip_address" value="192.168.0.10" />
+  </node>
+  
+
+</launch>

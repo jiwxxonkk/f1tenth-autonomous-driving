@@ -1,0 +1,9 @@
+raceline_editor:
+  build_tag: RACELINE_EDITOR_V8_LOGICFIX_2026-08-19
+  map_name: 0824_final
+  input_csv: /home/kimseokjin/lane_ws/src/f1tenth-racing-stack-ICRA22/trajectory_generator/outputs/0824_final/traj_race_cl.csv
+  output_csv: /home/kimseokjin/lane_ws/src/f1tenth-racing-stack-ICRA22/trajectory_generator/outputs/0824_final/traj_race_cl_edited.csv
+  global_max_speed_mps: 8.3852588
+  sector_blend_points: 10
+  n_sectors: 0
+  sectors: []

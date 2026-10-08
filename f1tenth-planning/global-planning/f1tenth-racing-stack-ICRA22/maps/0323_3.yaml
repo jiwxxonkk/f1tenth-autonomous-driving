@@ -1,0 +1,7 @@
+image: 0323_3.png
+resolution: 0.030000
+origin: [-13.135691, -3.848850, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

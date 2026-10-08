@@ -1,0 +1,15 @@
+<launch>
+
+<include file="/home/nvidia/loc_ws/localization_ws/src/robot_localization/launch/tf_broadcaster.launch"/>
+
+<!-- <node pkg="robot_localization" type="imu_yawrate_corrector.py" name="imu_yawrate_corrector" output="screen" /> -->
+
+<!--<include file="/home/nvidia/loc_ws/localization_ws/src/robot_localization/launch/ekf_localization.launch"/>-->
+
+<include file="/home/nvidia/loc_ws/localization_ws/src/robot_localization/launch/forzaekf.launch"/>
+
+<include file="/home/nvidia/loc_ws/amcl_ws/src/navigation/amcl/examples/amcl3.launch"/>
+
+<include file="/home/nvidia/loc_ws/src/launch/map_server.launch"/>
+
+</launch>

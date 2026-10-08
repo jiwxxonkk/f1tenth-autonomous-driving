@@ -1,0 +1,53 @@
+detect:
+  # --- node rate ---
+  rate: 20                 # [Hz] detect loop rate / 10
+
+  # --- segmentation (adaptive breakpoint) ---
+  lambda: 8                # [deg] 클러스터가 끊기는 민감도 (10 -> 8 추천: 쪼개짐 감소)
+  sigma: 0.045             # [m] 라이다 노이즈 완충 (0.03 -> 0.045 추천: 끊김 감소)
+  min_2_points_dist: 0.02  # [m] 사각형 피팅 수치 안정화 (0.01 -> 0.02 추천)
+
+  # --- FIX A: point-count filter ---
+  min_obs_points: 1 # 10  # [-] 클러스터 최소 포인트 개수 (8~12 추천, 시작 10)
+
+  # --- FIX B: path-only + front distance gate (detect_test.py가 이걸 씀) ---
+  max_viewing_distance: 16  # [m] 현재 차량 s 기준 앞쪽 탐지 거리
+  path_d_gate: 0.4          # [m] 경로 중심선에서 |d| 허용 범위 (0.35~0.5 추천)
+
+  # --- post-filter size gate ---
+  min_obs_size: 0.2 # dynamic_tracker_server.py를 사용할때만 사용하는 파라미터
+  max_obs_size: 0.6
+  
+  # (선택) 경계 마커/경계 보정에 쓰는 값 (지금 코드에선 크게 영향 없음)
+  boundaries_inflation: 0.3
+ 
+  # ----------------------------------------------------------------
+tracking:
+  # dynamic_tracker_server.py를 사용하고 있지 않을 때는 필요 없는 부분
+  # (참고) 지금 너희 회피 플래너는 raw_obstacles를 보고 있어서
+  # tracking은 당장 필수는 아니지만, 나중에 /perception/obstacles로 바꿀 때를 대비해
+  # "장애물 1개" 환경에 맞춰 스무딩 강하게 추천 세팅을 같이 넣어둠.
+
+  rate: 40
+
+  # prediction feedback gains
+  P_vs: 0.2
+  P_d: 0.02
+  P_vd: 0.2
+
+  # measurement variances (R): 키우면 더 부드러움(튀는 검출 완화)
+  measurment_var_s: 0.008
+  measurment_var_d: 0.008
+  measurment_var_vs: 0.8
+  measurment_var_vd: 0.8
+
+  # process variances (Q): 낮추면 더 매끈(급변 추종은 약해짐)
+  process_var_vs: 1
+  process_var_vd: 4
+
+  # association gate: 물체 1개라 넉넉하게 줘도 부작용 적음
+  max_dist: 0.8
+
+  # publish confidence gate: 낮추면 더 엄격(안정↑, 초기 출력 지연 가능)
+  var_pub: 0.7
+

@@ -1,0 +1,34 @@
+
+# ------------------------------------------------------------
+# 기존 GLOBAL lookahead Tuning parameters for lookahead distance as m*target_speed + q
+# ------------------------------------------------------------
+t_clip_min: 0.3
+t_clip_max: 2
+
+m_map: 0.4
+q_map: 0.4
+
+
+LU_table: "SIM_linear"
+#NUC4_pacejka
+
+# ------------------------------------------------------------
+# 회피 경로 발행 시 따라갈 lookahead point 길이
+# ------------------------------------------------------------
+avoidance_lookahead_min: 0.3
+avoidance_lookahead_max: 2
+
+avoidance_m_map: 0.7
+avoidance_q_map: 0.4
+
+lookahead_recovery_time: 1.3 # 회피->글로벌 복귀 시 lookahea를 부드럽게 복구하는 시간 [s]
+
+#speed_rate : 0.5 # 회피 시, 글로벌 속도의 속도 배율. (정적 0.35, 동적 0.65)
+
+# ------------------------------------------------------------
+# Speed / steering smoothing
+# ------------------------------------------------------------
+speed_accel_limit: 5.0 # 추월 시작 후 가속이 너무 느릴 때 올리기
+speed_decel_limit: 8.0 # 장애물 근접 시 감속이 너무 느릴 때 올리기
+
+
