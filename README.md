@@ -1,4 +1,4 @@
-# F1TENTH Autonomous Driving Portfolio
+# F1TENTH Autonomous Driving
 
 ## Purpose and technologies
 
