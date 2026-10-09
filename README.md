@@ -37,7 +37,7 @@ This diagram describes the intended functional flow. Mapping and driving are sep
 | Folder | Role |
 |---|---|
 | [Localization](f1tenth-localization/README.md) | AMCL, EKF, map loading, and sensor TF configuration |
-| [Perception](f1tenth-perception/README.md) | LiDAR obstacle detection and dynamic parameter tuning |
+| [Perception](f1tenth-perception/README.md) | LiDAR obstacle detection |
 | [Planning](f1tenth-planning/README.md) | Offline global paths, ROS path publication, and local avoidance alternatives |
 | [Control](f1tenth-control/README.md) | MAP path following and steering lookup |
 | [Mapping](f1tenth-mapping/README.md) | Cartographer launch and Lua configuration |
