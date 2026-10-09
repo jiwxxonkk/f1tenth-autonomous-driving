@@ -4,8 +4,7 @@
 
 This repository organizes the source files, launch configurations, maps, and trajectories used in a F1TENTH autonomous driving project. The system combines mapping, localization, LiDAR obstacle detection, global trajectory generation, local obstacle avoidance, and MAP path tracking on a Nano vehicle computer, with offline trajectory generation on a laptop.
 
-The archived software uses ROS 1, catkin, Python, C++, TF, AMCL, robot_localization, Cartographer, and VESC interfaces. The mapping commands explicitly reference ROS Noetic. Python code uses tools including NumPy, SciPy, OpenCV, and Matplotlib; environment compatibility and external package versions have not yet been verified.
-
+The archived software uses ROS 1, catkin, Python, C++, TF, AMCL, robot_localization, Cartographer, and VESC interfaces. The mapping commands explicitly reference ROS Noetic. Additional Python libraries are used for numerical computation, trajectory processing, and visualization.
 ## System architecture
 
 ```mermaid
